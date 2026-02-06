@@ -32,9 +32,9 @@ Solutions File
  ↓
 Categories choose Category
  ↓
-LeetCode / platform questions
+LeetCode / any other platform's question
  ↓
-My complete solutions
+My complete solution
 
 ```
 
