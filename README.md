@@ -14,7 +14,7 @@ My complete solutions
 
 
 
-# Simple structure for the repo this is for app 
+# a simple overview
 ```
 repo/
 │
