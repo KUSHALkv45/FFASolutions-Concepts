@@ -2,7 +2,13 @@
 
 
 
-# Solutions page -> Categories -> LeetCode / any platform questions -> their complete solutions
+# Go to Solutions page 
+#  ↓
+# Categories 
+#  ↓
+# LeetCode / any platform questions
+#  ↓
+# My complete solutions
 
 
 # Simple structure for the repo this is for app 
