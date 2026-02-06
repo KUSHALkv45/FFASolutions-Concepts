@@ -1,5 +1,10 @@
 # FFASolutions-Concepts
 
+
+
+# Solutions page -> Categories -> LeetCode / any platform questions -> their complete solutions
+
+
 # Simple structure for the repo this is for app 
 ```
 repo/
@@ -23,3 +28,5 @@ repo/
     ├── github_ops.py
     └── builders.py
 ```
+
+
