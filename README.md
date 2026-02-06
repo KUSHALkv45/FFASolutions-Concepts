@@ -1,7 +1,7 @@
 # FFASolutions-Concepts
 
 # Simple structure for the repo
-
+```
 repo/
 │
 ├── app.py                     ← Home
@@ -22,3 +22,4 @@ repo/
 └── utils/
     ├── github_ops.py
     └── builders.py
+```
