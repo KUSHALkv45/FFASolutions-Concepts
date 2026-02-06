@@ -2,9 +2,9 @@
 
 
 ```
-Solutions
+Solutions File
  ↓
-Categories
+Categories choose Category
  ↓
 LeetCode / platform questions
  ↓
