@@ -1,6 +1,6 @@
 # FFASolutions-Concepts
 
-# Simple structure for the repo
+# Simple structure for the repo this is for app 
 ```
 repo/
 │
