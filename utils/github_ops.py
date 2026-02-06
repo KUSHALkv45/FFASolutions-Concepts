@@ -19,7 +19,29 @@ def read_file(path):
     return base64.b64decode(f.content).decode("utf-8"), f.sha
 
 
+def ensure_dir(path):
+    """
+    Ensure a directory exists by creating a .gitkeep if needed
+    """
+    try:
+        repo.get_contents(path)
+    except:
+        repo.create_file(
+            f"{path}/.gitkeep",
+            f"Create directory {path}",
+            "",
+            branch=BRANCH,
+        )
+
+
 def create_file(path, content, msg):
+    # ensure all parent dirs exist
+    parts = path.split("/")[:-1]
+    cur = ""
+    for p in parts:
+        cur = f"{cur}/{p}" if cur else p
+        ensure_dir(cur)
+
     repo.create_file(path, msg, content, branch=BRANCH)
 
 
