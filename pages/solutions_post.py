@@ -1,6 +1,12 @@
 """Page for posting new solutions."""
 
 import streamlit as st
+import sys
+from pathlib import Path
+
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from utils.github_ops import list_dir, create_file
 from utils.builders import build_full_solution
 
@@ -75,7 +81,6 @@ st.markdown("---")
 
 # Validation
 has_required = title and category and idea
-has_any_content = idea or trace or complexity or code
 
 if st.button("🚀 Post Solution", type="primary", disabled=not has_required):
     if not title.strip():
