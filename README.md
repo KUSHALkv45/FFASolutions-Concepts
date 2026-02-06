@@ -1,19 +1,5 @@
 # FFASolutions-Concepts
 
-
-```
-Solutions File
- ↓
-Categories choose Category
- ↓
-LeetCode / platform questions
- ↓
-My complete solutions
-
-```
-
-
-
 # a simple overview
 ```
 repo/
@@ -40,4 +26,15 @@ repo/
     └── builders.py
 ```
 
+
+```
+Solutions File
+ ↓
+Categories choose Category
+ ↓
+LeetCode / platform questions
+ ↓
+My complete solutions
+
+```
 
