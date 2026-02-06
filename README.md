@@ -1,7 +1,7 @@
 # FFASolutions-Concepts
 
 
-
+```
 Solutions
  ↓
 Categories
@@ -9,6 +9,8 @@ Categories
 LeetCode / platform questions
  ↓
 My complete solutions
+
+```
 
 
 
