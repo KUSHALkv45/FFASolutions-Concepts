@@ -1,4 +1,4 @@
-# LC-3634. Minimum Removals to Balance Array
+# Lc 3634. Minimum Removals To Balance Array
 
 ## 💡 Idea
 
@@ -15,7 +15,7 @@ For 2 pointers:
 n - length of the array
 1. initialize i,j = n-1 
 2. Move the i till the condition nums[i]*k >= nums[j]: holds
-3. Then move j to one step
+3. Next move j to one step
 
 ## ⏱️ Time & Space Complexity
 
