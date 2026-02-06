@@ -19,19 +19,31 @@ def read_file(path):
     return base64.b64decode(f.content).decode("utf-8"), f.sha
 
 
+from github.GithubException import GithubException
+
 def ensure_dir(path):
     """
-    Ensure a directory exists by creating a .gitkeep if needed
+    Ensure a directory exists in GitHub.
+    If it exists, do nothing.
+    If it does not exist, create it via .gitkeep.
     """
     try:
-        repo.get_contents(path)
-    except:
-        repo.create_file(
-            f"{path}/.gitkeep",
-            f"Create directory {path}",
-            "",
-            branch=BRANCH,
-        )
+        contents = repo.get_contents(path)
+        # If we get here, the directory already exists
+        return
+    except GithubException as e:
+        if e.status == 404:
+            # Directory does not exist → create it
+            repo.create_file(
+                f"{path}/.gitkeep",
+                f"Create directory {path}",
+                "",
+                branch=BRANCH,
+            )
+        else:
+            # Any other error should be raised
+            raise
+
 
 
 def create_file(path, content, msg):
