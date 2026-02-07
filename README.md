@@ -28,11 +28,11 @@ repo/
 
 
 ```
-Solutions File
+Solutions dkr
  ↓
-Categories choose Category
+Categories 
  ↓
-LeetCode / any other platform's question
+LeetCode / any other platform's question's name
  ↓
 My complete solution
 
