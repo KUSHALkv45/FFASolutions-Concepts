@@ -42,7 +42,7 @@ if category:
         )
         
         # Read section content
-        path = f"solutions/{category}/{solution}/{section}.md"
+        path = f"solutions/{category}/{solution}/.sections/{section}.md"
         
         try:
             content, sha = read_file(path)
@@ -85,7 +85,7 @@ if category:
                     all_sections = {}
                     for s in sections:
                         try:
-                            section_content, _ = read_file(f"solutions/{category}/{solution}/{s}.md")
+                            section_content, _ = read_file(f"solutions/{category}/{solution}/.sections/{s}.md")
                             all_sections[s] = section_content
                         except Exception:
                             all_sections[s] = ""
