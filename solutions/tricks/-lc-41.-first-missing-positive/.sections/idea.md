@@ -1,0 +1,1 @@
+Just use the array for storing as we can't use any other thing
