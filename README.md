@@ -34,7 +34,9 @@ Categories
  ↓
 LeetCode / any other platform's question's name
  ↓
-My complete solution
+full.md file
+(My complete solution)
+
 
 ```
 
