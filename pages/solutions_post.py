@@ -98,7 +98,7 @@ if st.button("🚀 Post Solution", type="primary", disabled=not has_required):
             files_created = []
             for key, content in sections.items():
                 if content and content.strip():
-                    create_file(f"{base}/{key}.md", content, f"Add {key} for {title}")
+                    create_file(f"{base}/.sections/{key}.md", content, f"Add {key} for {title}")
                     files_created.append(key)
             
             # Create full solution file with only the sections that have content
