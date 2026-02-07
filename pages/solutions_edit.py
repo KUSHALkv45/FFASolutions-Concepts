@@ -96,8 +96,8 @@ if category:
                     title = solution.replace("-", " ").title()
                     full = build_full_solution(title, all_sections)
                     
-                    # Update editorial.md
-                    full_path = f"solutions/{category}/{solution}/editorial.md"
+                    # Update full.md
+                    full_path = f"solutions/{category}/{solution}/full.md"
                     try:
                         _, full_sha = read_file(full_path)
                         update_file(full_path, full, full_sha, f"Rebuild full solution for {solution}")
