@@ -104,10 +104,10 @@ if st.button("🚀 Post Solution", type="primary", disabled=not has_required):
             # Create full solution file with only the sections that have content
             # Pass empty string for missing sections to build_full_solution
             full = build_full_solution(title, sections)
-            create_file(f"{base}/editorial.md", full, f"Add solution: {title}")
+            create_file(f"{base}/full.md", full, f"Add solution: {title}")
             
             st.success(f"✅ Solution '{title}' posted successfully!")
-            st.info(f"📄 Created files: {', '.join(files_created + ['editorial'])}")
+            st.info(f"📄 Created files: {', '.join(files_created + ['full'])}")
             st.balloons()
             
         except Exception as e:
