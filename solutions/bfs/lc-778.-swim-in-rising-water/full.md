@@ -19,8 +19,10 @@ and we will get 3 as the answer here for this grid
 
 ## ⏱️ Time & Space Complexity
 
-"TC : O(log(N*4))
-SC : N*4"
+```
+TC : O(log(N*4))
+SC : N*4
+```
 
 ## 💻 Code
 
