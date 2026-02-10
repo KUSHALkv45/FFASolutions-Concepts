@@ -1,4 +1,4 @@
-
+```java
     public int swimInWater(int[][] grid) {
         int n = grid.length;
          // just like dijsktra's states use this for adding only when needed
@@ -29,4 +29,6 @@
         }
         return -1;
     }
+
+```
 
