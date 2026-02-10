@@ -29,10 +29,9 @@ SC : N*4
 ## 💻 Code
 
 ```python
-```java
-    public int swimInWater(int[][] grid) {
+public int swimInWater(int[][] grid) {
         int n = grid.length;
-         // just like dijsktra's states use this for adding only when needed
+        - just like dijsktra's states use this for adding only when needed
         int[][] dist = new int[n][n]; 
         for (int[] row : dist) Arrays.fill(row, Integer.MAX_VALUE);
         dist[0][0] = grid[0][0];
@@ -60,7 +59,5 @@ SC : N*4
         }
         return -1;
     }
-
-```
 ```
 
