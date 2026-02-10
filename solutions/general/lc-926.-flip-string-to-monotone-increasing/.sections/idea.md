@@ -1,0 +1,1 @@
+Using prefix counts and keeping trail 0's and prior 1's counts we can make it 00001111 like
