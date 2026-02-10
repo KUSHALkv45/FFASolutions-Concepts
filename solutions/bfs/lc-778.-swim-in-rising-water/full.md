@@ -29,7 +29,8 @@ SC : N*4
 ## 💻 Code
 
 ```python
-public int swimInWater(int[][] grid) {
+```java
+    public int swimInWater(int[][] grid) {
         int n = grid.length;
          // just like dijsktra's states use this for adding only when needed
         int[][] dist = new int[n][n]; 
@@ -59,5 +60,7 @@ public int swimInWater(int[][] grid) {
         }
         return -1;
     }
+
+```
 ```
 
