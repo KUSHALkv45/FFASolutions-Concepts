@@ -1,4 +1,4 @@
-# LC-2328. Number of Increasing Paths in a Grid
+# Lc 2328. Number Of Increasing Paths In A Grid
 
 ## 💡 Idea
 
@@ -10,9 +10,12 @@ dfs and memoize the path counts
 
 ## ⏱️ Time & Space Complexity
 
+```
 TC : O(N) 
 SC : O(N)
 N - no of edges = n*m*4
+
+```
 
 ## 💻 Code
 
