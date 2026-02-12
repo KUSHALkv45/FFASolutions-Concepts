@@ -21,7 +21,7 @@
 - For 2 char substrings 
 - Consider we have a,b,c as counts  at current index  we are trying for ab substring(2char)
 - first we need to find index where it has same c val ,so that then the remaining substring will be only with 'a','b' 
--if  Ax,Bx are a,b val at index x then  a-Ax = b-Bx
+- if  Ax,Bx are a,b val at index x then  a-Ax = b-Bx
 - From a-Ax = b-Bx  =>  a-b = Ax-Bx 
 - if  at curr index i we have a,b,c  (counts)  if at index x  Ax,Bx,Cx we want Cx = c , a-b = Ax-Bx
 
