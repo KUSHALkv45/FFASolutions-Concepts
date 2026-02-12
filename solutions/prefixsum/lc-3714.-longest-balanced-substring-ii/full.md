@@ -4,7 +4,7 @@
 
 ```
 - This goes from prefix sum principal logic:
-- if we are finding subarray with sum = req : we use prefix sum concept this basic is the core
+- if we are finding subarray with sum = req : we use this prefix sum concept :this is the core
 
 - Here only 'a','b','c' chars are present in the string : 
 - so only 1 char subtrings ,2 char substrings and 3 char substrings are possible
