@@ -10,13 +10,13 @@
 - so only 1 char subtrings ,2 char substrings and 3 char substrings are possible
 
 #Notations : 
-# a - char 'a''s count , b- 'b' count and c - 'c' count
+# a - char 'a' - count , b- 'b' count and c - 'c' count
 # 1 char substring means aaaa or bbbb or cccccc only with one of the char
 # 2 char -> aabb , aaccccaa , bc
 # 3 char -> abcabc, aabbcc
 
 - For 1 char 
-- it is straight forward u keep track of prev char and inc the len till u dont find a new char then u change it 
+- it is straight forward u keep track of prev char and inc the len till u dont find a new char then u reset 
 
 - For 2 char substrings 
 - Consider we have a,b,c as counts  at current index  we are trying for ab substring(2char)
