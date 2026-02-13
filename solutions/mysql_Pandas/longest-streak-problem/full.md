@@ -1,87 +1,120 @@
+
+---
+
 # Longest Streak Problem
 
 ## 💡 Idea
 
-```
-link :  (https://platform.stratascratch.com/coding/2131-user-streaks?code_type=3)
-link : (https://platform.stratascratch.com/coding/2059-player-with-longest-streak?code_type=3)
+**Links:**
 
-Main Idea :
-if we have   table like this
-user_id          win/loss
-u1                    W
-u1                     L
-u1                     W
-u1                     W
-u1                     W
-u1                      L
-u1                     W
-u1                     L
-u1                     L
+* [https://platform.stratascratch.com/coding/2131-user-streaks?code_type=3](https://platform.stratascratch.com/coding/2131-user-streaks?code_type=3)
+* [https://platform.stratascratch.com/coding/2059-player-with-longest-streak?code_type=3](https://platform.stratascratch.com/coding/2059-player-with-longest-streak?code_type=3)
 
+### Main Idea
 
-we have to find the longes streak here  which is 3  and for this we have to mark all consecutive W's as one unique group  for doing this the we can use rng sum and find the no of losses till current row
-
-which will make our table look like this :
-
-user_id          win/loss            (rngSum) groupId
-u1                    W                          0
-u1                     L                          1
-u1                     W                        1
-u1                     W                        1
-u1                     W                        1
-u1                      L                         2
-u1                     W                        2
-u1                     L                         3
-u1                     L                         4
-
-now we can group with user_i and unique group id we created  (with only wins ofcourse)
-
-if the question is asked about consecutive dates streaks like logins etc .. use date - rowNumber this will create a unique group Id 
+If we have a table like this:
 
 ```
+user_id     win/loss
+u1          W
+u1          L
+u1          W
+u1          W
+u1          W
+u1          L
+u1          W
+u1          L
+u1          L
+```
+
+We need to find the **longest streak**, which in this case is **3**.
+
+To do this, we must mark all **consecutive W’s** as one unique group.
+For that, we can use a **running sum** and count the number of losses (`L`) up to the current row.
+
+This will transform the table into:
+
+```
+user_id     win/loss     (running sum) group_id
+u1          W            0
+u1          L            1
+u1          W            1
+u1          W            1
+u1          W            1
+u1          L            2
+u1          W            2
+u1          L            3
+u1          L            4
+```
+
+Now, we can group by `user_id` and the generated `group_id` (considering only wins).
+
+If the question is about **consecutive date streaks** (for example, login streaks), we can use:
+
+```
+date - row_number()
+```
+
+This creates a unique group ID for each continuous date streak.
+
+---
 
 ## 💻 Code
 
-```python
-#for 1st question :#
+### For Question 1
 
-with cte as
-(
-select user_id , date_visited , date_visited - row_number() over (partition by user_id order by date_visited) as req
-from  (select * from user_streaks where date_visited <= '2022-08-10' group by user_id , date_visited) t
+```sql
+WITH cte AS (
+    SELECT
+        user_id,
+        date_visited,
+        date_visited
+          - ROW_NUMBER() OVER (
+                PARTITION BY user_id
+                ORDER BY date_visited
+            ) AS req
+    FROM user_streaks
+    WHERE date_visited <= '2022-08-10'
+    GROUP BY user_id, date_visited
 ),
-cte2 as
-(
-select user_id , max(cnt) as fin
-from
-(
-select user_id , count(user_id ) as cnt
-from cte
-group by 1,req
-)t
-group by 1
+cte2 AS (
+    SELECT
+        user_id,
+        MAX(cnt) AS fin
+    FROM (
+        SELECT
+            user_id,
+            COUNT(user_id) AS cnt
+        FROM cte
+        GROUP BY user_id, req
+    ) t
+    GROUP BY user_id
 )
-
-select user_id , fin as streak_length
-from
-(
-select user_id , fin , dense_rank() over(order by fin desc) as dr
-from cte2
+SELECT
+    user_id,
+    fin AS streak_length
+FROM (
+    SELECT
+        user_id,
+        fin,
+        DENSE_RANK() OVER (ORDER BY fin DESC) AS dr
+    FROM cte2
 ) t
-where dr < 4
+WHERE dr < 4;
+```
 
+---
 
+### For Question 2
 
-#for 2nd question#
-
+```sql
 WITH cte AS (
     SELECT
         *,
-        SUM(IF(match_result = 'L', 1, 0)) OVER (PARTITION BY player_id ORDER BY match_date) AS rn
+        SUM(IF(match_result = 'L', 1, 0))
+            OVER (PARTITION BY player_id ORDER BY match_date) AS rn
     FROM players_results
 ),
-
 cte1 AS (
     SELECT
         player_id,
@@ -90,7 +123,6 @@ cte1 AS (
     WHERE match_result = 'W'
     GROUP BY player_id, rn
 ),
-
 cte2 AS (
     SELECT
         player_id,
@@ -98,11 +130,13 @@ cte2 AS (
     FROM cte1
     GROUP BY player_id
 )
-
 SELECT
     player_id,
     streak AS longest_win_streak
 FROM cte2
-WHERE streak = (SELECT MAX(streak) FROM cte2)
+WHERE streak = (SELECT MAX(streak) FROM cte2);
 ```
+
+---
+
 
