@@ -1,3 +1,4 @@
+```
 This is a pick/no Pick knapsack problem we use tabulation like this
 for example   nums1 = [2,1,-2,5], nums2 = [3,0,-6]
 1. We have a order defined here we have to pick elements in order 
@@ -10,3 +11,4 @@ X	0	0	0	0
 5	0	15	6	18
 
 the max dot product possible is 18 
+```
