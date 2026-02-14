@@ -1,5 +1,6 @@
-```
 -This is same as LC-1458 (https://leetcode.com/problems/max-dot-product-of-two-subsequences/description/)
+```
+
 
 - Add a additional dimension of k here
 - Base for this problem is Knapsack pick/no Pick Tabularization
