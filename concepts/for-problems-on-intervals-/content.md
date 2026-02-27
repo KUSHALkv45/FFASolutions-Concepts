@@ -24,6 +24,30 @@ Non-overlapping Intervals
 Minimum Number of Arrows to Burst Balloons
 Remove Covered Intervals
 
+2️⃣ Interval Merging
+
+“Combine overlapping ranges”
+Recognition
+“Merge”, “union”, “combine”
+Output intervals, not counts
+
+Key idea
+Sort by start, extend current interval while overlapping.
+
+Template
+```
+sort by start
+if cur.start ≤ prev.end → merge
+else push new interval
+
+```
+
+Problems
+Merge Intervals
+Insert Interval
+Interval List Intersections
+
 ## 🔗 Related Problems
 
 - https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
+- https://leetcode.com/problems/insert-interval/description/
