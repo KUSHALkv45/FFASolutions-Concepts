@@ -1,8 +1,5 @@
 # For Problems On Intervals 
 
-# For Problems on Intervals 
-
-
 1️⃣ Overlap / Conflict Detection
 
 “Do intervals clash?”
