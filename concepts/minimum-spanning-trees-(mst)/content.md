@@ -1,3 +1,5 @@
+# Minimum Spanning Trees (Mst)
+
 # Minimum Spanning Trees (MST)
 
 ```
@@ -26,7 +28,7 @@ MST features :
 ```
 
 
-```
+``` python
 class Solution:
     def minCostConnectPointsPRIMSOptmized(self, points: List[List[int]]) -> int:
         N = len(points)
