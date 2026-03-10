@@ -26,7 +26,7 @@ MST features :
 
 
 ```
-[graph.png]
+![example graph for tracing the algo](graph.png)
 
 ``` python
 class Solution:
