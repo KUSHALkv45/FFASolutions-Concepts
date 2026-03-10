@@ -26,7 +26,7 @@ MST features :
 
 
 ```
-
+[graph.png]
 
 ``` python
 class Solution:
