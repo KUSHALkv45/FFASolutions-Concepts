@@ -149,3 +149,4 @@ class Solution:
 ## 🔗 Related Problems
 
 - https://leetcode.com/problems/min-cost-to-connect-all-points/
+- https://www.geeksforgeeks.org/dsa/minimum-cost-to-provide-water/
