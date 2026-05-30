@@ -1,0 +1,1 @@
+use HashMap  and two pointers with sorting 
